@@ -1,0 +1,204 @@
+- name: AxelLine
+  nodes:
+  - id: na0334ac8
+    kind: Start
+    printerKind: Barcode
+    x: 150
+    y: 90
+  - id: n293cf923
+    kind: End
+    printerKind: Barcode
+    x: 160
+    y: 320
+  - id: n4659cfb9
+    kind: Station
+    stationName: Final checkout
+    printerKind: Barcode
+    x: 100
+    y: 200
+  links:
+  - fromId: na0334ac8
+    toId: n4659cfb9
+    waypoints: []
+  - fromId: n4659cfb9
+    toId: n293cf923
+    waypoints: []
+- name: PropshaftLine1
+  nodes:
+  - id: n7485904c
+    kind: Start
+    printerKind: Barcode
+    label: Prototype Part
+    x: 680
+    y: 0
+  - id: n474ab576
+    kind: End
+    printerKind: Barcode
+    x: 880
+    y: 790
+  - id: n3ff43457
+    kind: Station
+    stationName: PrototypeTable1
+    printerKind: Barcode
+    x: 410
+    y: 80
+  - id: na88bfc4f
+    kind: Station
+    stationName: PrototypeTable2
+    printerKind: Barcode
+    x: 830
+    y: 90
+  - id: n4444291e
+    kind: Station
+    stationName: ProductionTable1
+    printerKind: Barcode
+    x: 410
+    y: 230
+  - id: n514de6c1
+    kind: Station
+    stationName: ProductionTable2
+    printerKind: Barcode
+    x: 830
+    y: 220
+  - id: n479ea498
+    kind: Station
+    stationName: Welder
+    printerKind: Barcode
+    x: 640
+    y: 380
+  - id: n83da2628
+    kind: Start
+    printerKind: Barcode
+    label: Production Part
+    x: 680
+    y: 230
+  - id: n644ecbf0
+    kind: Station
+    stationName: MarryUp
+    printerKind: Barcode
+    x: 640
+    y: 480
+  - id: nacf65dea
+    kind: Station
+    stationName: Balance
+    printerKind: Barcode
+    x: 640
+    y: 580
+  - id: n727189b0
+    kind: Station
+    stationName: Paint
+    printerKind: Barcode
+    x: 640
+    y: 680
+  - id: n97d0d592
+    kind: Station
+    stationName: Final QA
+    printerKind: Barcode
+    x: 640
+    y: 790
+  - id: n846ee484
+    kind: Printer
+    printerName: Table1Printer
+    printerKind: Barcode
+    x: 210
+    y: 140
+  - id: n12fa5c35
+    kind: Device
+    deviceName: ScannerP1
+    printerKind: Barcode
+    x: 210
+    y: 80
+  - id: n364ef75e
+    kind: Device
+    deviceName: BalanceCam
+    printerKind: Barcode
+    x: 850
+    y: 590
+  - id: n9451e97a
+    kind: Device
+    deviceName: WeldCam
+    printerKind: Barcode
+    x: 850
+    y: 390
+  - id: n1238f7d1
+    kind: Device
+    deviceName: MaryUpCam
+    printerKind: Barcode
+    x: 850
+    y: 490
+  - id: n56b7db0d
+    kind: Device
+    deviceName: ScannerP2
+    printerKind: Barcode
+    x: 1030
+    y: 80
+  - id: nd4ddb789
+    kind: Device
+    deviceName: ScannerProd1
+    printerKind: Barcode
+    x: 210
+    y: 240
+  - id: nddfc2612
+    kind: Device
+    deviceName: ScannerProd2
+    printerKind: Barcode
+    x: 1030
+    y: 240
+  - id: n91979c61
+    kind: Printer
+    printerName: Table 2 Printer
+    printerKind: Barcode
+    x: 1030
+    y: 130
+  links:
+  - fromId: n7485904c
+    toId: n3ff43457
+    waypoints:
+    - x: 520
+      y: 30
+  - fromId: n7485904c
+    toId: na88bfc4f
+    waypoints:
+    - x: 880
+      y: 30
+    - x: 900
+      y: 100
+  - fromId: n3ff43457
+    toId: n4444291e
+    waypoints: []
+  - fromId: na88bfc4f
+    toId: n514de6c1
+    waypoints: []
+  - fromId: n4444291e
+    toId: n479ea498
+    waypoints: []
+  - fromId: n514de6c1
+    toId: n479ea498
+    waypoints: []
+  - fromId: na88bfc4f
+    toId: n4444291e
+    waypoints: []
+  - fromId: n3ff43457
+    toId: n514de6c1
+    waypoints: []
+  - fromId: n83da2628
+    toId: n514de6c1
+    waypoints: []
+  - fromId: n83da2628
+    toId: n4444291e
+    waypoints: []
+  - fromId: n479ea498
+    toId: n644ecbf0
+    waypoints: []
+  - fromId: n644ecbf0
+    toId: nacf65dea
+    waypoints: []
+  - fromId: nacf65dea
+    toId: n727189b0
+    waypoints: []
+  - fromId: n727189b0
+    toId: n97d0d592
+    waypoints: []
+  - fromId: n97d0d592
+    toId: n474ab576
+    waypoints: []

@@ -1,0 +1,4 @@
+- name: Counter
+  isArray: false
+  dataType: Integer
+  variableType: Local

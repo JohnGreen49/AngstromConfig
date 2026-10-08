@@ -1,0 +1,8 @@
+- name: Table 2 Printer
+  station: PrototypeTable2
+  type: Network
+  socketIPAddress: 192.168.3.2
+- name: Table1Printer
+  station: PrototypeTable1
+  type: Network
+  socketIPAddress: 192.168.3.2

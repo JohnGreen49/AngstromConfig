@@ -1,0 +1,9 @@
+mainFormFGColor: '#D2E1FA'
+mainFormBGColor: '#D2E1FA'
+mainFormButtonFGColor: '#D2E1FA'
+mainFormButtonBGColor: '#D2E1FA'
+gridSize: 10
+showGrid: True
+snapToGrid: True
+configuratorFontName: Arial
+configuratorFontSize: 10
