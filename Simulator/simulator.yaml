@@ -1,0 +1,88 @@
+# Angstrom PropshaftLine1 simulator configuration.
+#
+# Devices here must agree with the Socket devices in ../pwDevice.yaml: PlantWatch connects
+# to <this machine>:<port> for each one, and messages are framed with the prefix/suffix below.
+
+# Where CSV files are dropped. One sub-folder per CSV kind: Assembly/, Balance/, Inspection/.
+# Point the PlantWatch ReadFromFile devices at <outputDirectory>\<Kind>\*.csv
+outputDirectory: C:\PlantWatchShare\PropshaftLine1
+
+# Interface to listen on. 0.0.0.0 accepts PlantWatch from this machine or the network.
+bindAddress: 0.0.0.0
+
+# Must match searchMethodPrefix / searchMethodSuffix on every Socket device in pwDevice.yaml.
+framing:
+  prefix: "<1>"
+  suffix: "</1?>"
+
+line:
+  name: PropshaftLine1
+  serialPrefix: PS          # serials look like PS261017-00042
+  partsPerMinute: 4         # how often a new part enters the line
+  prototypeRatio: 0.2       # 20% of parts come in through a prototype table
+  totalParts: 0             # 0 = run until stopped
+  wipBatchSize: 25          # parts per WIPBatchNumber
+  passRatePercent: 97       # chance a Result / PassFail is PASS
+  jitterPercent: 20         # +/- randomness on every cycle time
+  seed: 0                   # fixed seed for repeatable runs, 0 = random
+
+# Socket devices PlantWatch connects to. Ports must be unique.
+# payload is what goes between the delimiters. Placeholders:
+#   {serial} {station} {result} {date} {time} {timestamp} {batch} {prototype}
+devices:
+  - name: ScannerP1
+    port: 2001
+  - name: ScannerP2
+    port: 2002
+  - name: ScannerProd1
+    port: 2003
+  - name: ScannerProd2
+    port: 2004
+  - name: WeldCam
+    port: 2005
+    payload: "{serial},{result}"
+  - name: MaryUpCam
+    port: 2006
+    payload: "{serial},{result}"
+  - name: BalanceCam
+    port: 2007
+    payload: "{serial},{result}"
+
+# Stations in line order. Roles:
+#   PrototypeEntry  - prototype parts start here, scanned by the device
+#   ProductionEntry - production parts start here; prototypes are scanned here again
+#   Process         - every later step, visited in the order listed
+# cycleSeconds is how long a part sits at the station before its event/CSV is emitted.
+stations:
+  - name: PrototypeTable1
+    role: PrototypeEntry
+    device: ScannerP1
+    cycleSeconds: 5
+  - name: PrototypeTable2
+    role: PrototypeEntry
+    device: ScannerP2
+    cycleSeconds: 5
+  - name: ProductionTable1
+    role: ProductionEntry
+    device: ScannerProd1
+    cycleSeconds: 5
+  - name: ProductionTable2
+    role: ProductionEntry
+    device: ScannerProd2
+    cycleSeconds: 5
+  - name: Welder
+    device: WeldCam
+    cycleSeconds: 20
+  - name: MarryUp
+    device: MaryUpCam
+    csv: Assembly
+    cycleSeconds: 25
+  - name: Balance
+    device: BalanceCam
+    csv: Balance
+    cycleSeconds: 30
+  - name: Paint
+    cycleSeconds: 40
+  - name: Final QA
+    csv: Inspection
+    cycleSeconds: 15

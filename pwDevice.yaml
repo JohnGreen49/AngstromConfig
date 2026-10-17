@@ -1,5 +1,5 @@
-- portID: 2001
-  iPAddress: 192.168.3.2
+- portID: 2007
+  iPAddress: 127.0.0.1
   connectionTimeoutMs: 5000
   messageMode: Delimited
   searchMethodNumberOfChars: 0
@@ -9,8 +9,29 @@
   deviceType: Socket
   station: Balance
   disabled: false
-- portID: 2001
-  iPAddress: 192.168.3.2
+- fileSpec: C:\PlantWatchShare\PropshaftLine1\Balance\*.csv
+  scanRate: Continuous
+  deleteFileAfterRead: true
+  name: BalanceCsv
+  deviceType: ReadFromFile
+  station: Balance
+  disabled: false
+- fileSpec: C:\PlantWatchShare\PropshaftLine1\Inspection\*.csv
+  scanRate: Continuous
+  deleteFileAfterRead: true
+  name: FinalQACsv
+  deviceType: ReadFromFile
+  station: Final QA
+  disabled: false
+- fileSpec: C:\PlantWatchShare\PropshaftLine1\Assembly\*.csv
+  scanRate: Continuous
+  deleteFileAfterRead: true
+  name: MarryUpCsv
+  deviceType: ReadFromFile
+  station: MarryUp
+  disabled: false
+- portID: 2006
+  iPAddress: 127.0.0.1
   connectionTimeoutMs: 5000
   messageMode: Delimited
   searchMethodNumberOfChars: 0
@@ -21,7 +42,7 @@
   station: MarryUp
   disabled: false
 - portID: 2001
-  iPAddress: 192.168.3.1
+  iPAddress: 127.0.0.1
   connectionTimeoutMs: 5000
   messageMode: Delimited
   searchMethodNumberOfChars: 0
@@ -31,8 +52,8 @@
   deviceType: Socket
   station: PrototypeTable1
   disabled: false
-- portID: 2001
-  iPAddress: 192.168.3.2
+- portID: 2002
+  iPAddress: 127.0.0.1
   connectionTimeoutMs: 5000
   messageMode: Delimited
   searchMethodNumberOfChars: 0
@@ -42,8 +63,8 @@
   deviceType: Socket
   station: PrototypeTable2
   disabled: false
-- portID: 2001
-  iPAddress: 192.168.3.2
+- portID: 2003
+  iPAddress: 127.0.0.1
   connectionTimeoutMs: 5000
   messageMode: Delimited
   searchMethodNumberOfChars: 0
@@ -53,8 +74,8 @@
   deviceType: Socket
   station: ProductionTable1
   disabled: false
-- portID: 2001
-  iPAddress: 192.168.3.2
+- portID: 2004
+  iPAddress: 127.0.0.1
   connectionTimeoutMs: 5000
   messageMode: Delimited
   searchMethodNumberOfChars: 0
@@ -64,8 +85,8 @@
   deviceType: Socket
   station: ProductionTable2
   disabled: false
-- portID: 2001
-  iPAddress: 192.168.3.2
+- portID: 2005
+  iPAddress: 127.0.0.1
   connectionTimeoutMs: 5000
   messageMode: Delimited
   searchMethodNumberOfChars: 0
