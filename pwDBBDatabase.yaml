@@ -1,5 +1,5 @@
 - name: PartDB1
-  connectionString: Data Source=localhost\SQLEXPRESS;initial Catalog=PW;Integrated Security=SSPI
+  connectionString: Data Source=localhost\SQLEXPRESS;initial Catalog=PWInventory;Integrated Security=SSPI
   timeout: 2000
   sQLorODBCType: NativeSQL
   connectionTestQueryPeriod: 10

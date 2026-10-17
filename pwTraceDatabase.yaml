@@ -1,2 +1,4 @@
 enabled: yes
-provider: file
+provider: pw
+databaseName: PartDB1
+connectionString: Data Source=localhost\SQLEXPRESS;initial Catalog=PWInventory;Integrated Security=SSPI
