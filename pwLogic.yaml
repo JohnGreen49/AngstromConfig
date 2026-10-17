@@ -1,1 +1,22 @@
-[]
+- gridRows: 3
+  gridColumns: 10
+  name: BalanceCam_Logic_1
+  associatedDeviceName: BalanceCam
+  triggerMode: OnEvent
+  steps:
+  - action:
+      actionType: PrintBarcode
+      printerName: Table 2 Printer
+      fields: &o0
+      - fieldName: A
+        fieldType: Text
+        positionX: 10
+        positionY: 100
+        sourceType: Variable
+        source: FormattedTimeStamp
+      name: Cell 0 1
+  - action:
+      actionType: PrintBarcode
+      printerName: Table 2 Printer
+      fields: *o0
+      name: Cell 0 2
