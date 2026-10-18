@@ -6,6 +6,10 @@
   isArray: false
   dataType: String
   variableType: Local
+- name: AssemblyDateTime
+  isArray: false
+  dataType: String
+  variableType: Local
 - name: AssemblyStation
   isArray: false
   dataType: String
@@ -92,10 +96,10 @@
   variableType: Local
 - variableType: Constant
   name: Shaft
-  description: 'Constant: Shaft'
+  description: 'Constant: 666-777'
   isArray: false
   dataType: String
-  defaultValue: Shaft
+  defaultValue: 666-777
 - name: Status
   isArray: false
   dataType: String

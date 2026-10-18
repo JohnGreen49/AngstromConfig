@@ -47,6 +47,30 @@
       statusVariableType: Variable
       statusVariable: Status
       name: Cell 0 3
+  - action:
+      actionType: FillTemplate
+      templateSourceType: Inline
+      templateText: ${AssemblyDate} ${AssemblyTime}
+      outputVariable: AssemblyDateTime
+      name: FormatDateTime
+  - action:
+      actionType: CollectDataPoints
+      partNumberType: Variable
+      partNumber: Shaft
+      partSerialNumberType: Variable
+      partSerialNumber: SerialNumber
+      attributes:
+      - name: AssembledAt
+        valueType: Variable
+        value: AssemblyDateTime
+      - name: WIPBatch
+        valueType: Variable
+        value: WIPBatchNumber
+      - name: Result
+        valueType: Variable
+        value: Result
+      status: ErrorStatus
+      name: Cell 0 5
 - gridRows: 3
   gridColumns: 10
   name: BalanceCam_Logic_1
