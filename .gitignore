@@ -16,3 +16,11 @@ bin-release/
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
 # should NOT be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.
+
+# PlantWatch configuration backups (written on every save)
+Backups/
+*.zip
+
+# Java line simulator build output and Maven wrapper cache
+Simulator/target/
+Simulator/.mvn/wrapper/*.jar
