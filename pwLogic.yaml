@@ -1,5 +1,54 @@
 - gridRows: 3
   gridColumns: 10
+  name: Assembly_Logic
+  associatedDeviceName: MarryUpCsv
+  triggerMode: OnEvent
+  steps:
+  - action:
+      actionType: ParseCSV
+      sourceType: Device
+      delimiter: Comma
+      skipFirstLine: Yes
+      trimFields: Yes
+      columns:
+      - columnNumber: 1
+        variable: SerialNumber
+      - columnNumber: 2
+        variable: WIPBatchNumber
+      - columnNumber: 3
+        variable: AssemblyStation
+      - columnNumber: 4
+        variable: AssemblyDate
+      - columnNumber: 5
+        variable: AssemblyTime
+      - columnNumber: 6
+        variable: TorqueValue
+      - columnNumber: 7
+        variable: Result
+      status: ErrorStatus
+      name: ParseAssyData
+  - action:
+      actionType: Math
+      operator: IncrementAsNumber
+      variable: AssemblyCount
+      clearStartIndex: 1
+      clearLength: 1
+      name: Cell 0 2
+  - action:
+      actionType: ActionBirth
+      partNumberType: Value
+      partNumber: 666-777
+      partProducerType: Constant
+      partProducer: Angstrom
+      partSerialNumberType: Variable
+      partSerialNumber: SerialNumber
+      lotQuantityType: Value
+      lotQuantity: 1
+      statusVariableType: Variable
+      statusVariable: Status
+      name: Cell 0 3
+- gridRows: 3
+  gridColumns: 10
   name: BalanceCam_Logic_1
   associatedDeviceName: BalanceCam
   triggerMode: OnEvent
@@ -19,4 +68,76 @@
       actionType: PrintBarcode
       printerName: Table 2 Printer
       fields: *o0
+      name: Cell 0 2
+- gridRows: 3
+  gridColumns: 10
+  name: Balance_Logic
+  associatedDeviceName: BalanceCsv
+  triggerMode: OnEvent
+  steps:
+  - action:
+      actionType: ParseCSV
+      sourceType: Device
+      delimiter: Comma
+      skipFirstLine: Yes
+      trimFields: Yes
+      columns:
+      - columnNumber: 1
+        variable: Balance_SerialNumber
+      - columnNumber: 2
+        variable: BalanceDate
+      - columnNumber: 3
+        variable: BalanceTime
+      - columnNumber: 4
+        variable: UnbalanceAmount
+      - columnNumber: 5
+        variable: CorrectionWeight
+      - columnNumber: 6
+        variable: CorrectionAngle
+      - columnNumber: 7
+        variable: Balance_Result
+      status: ErrorStatus
+      fieldCountVariable: BalanceFieldCount
+      name: Cell 0 1
+  - action:
+      actionType: Math
+      operator: IncrementAsNumber
+      variable: BalanceCount
+      clearStartIndex: 1
+      clearLength: 1
+      name: Cell 0 2
+- gridRows: 3
+  gridColumns: 10
+  name: QA_Logic
+  associatedDeviceName: FinalQACsv
+  triggerMode: OnEvent
+  steps:
+  - action:
+      actionType: ParseCSV
+      sourceType: Device
+      delimiter: Comma
+      skipFirstLine: Yes
+      trimFields: Yes
+      columns:
+      - columnNumber: 1
+        variable: QASerialNumber
+      - columnNumber: 2
+        variable: InspectionDate
+      - columnNumber: 3
+        variable: InspectionTime
+      - columnNumber: 4
+        variable: VisionResult
+      - columnNumber: 5
+        variable: MeasurementData
+      - columnNumber: 6
+        variable: PassFail
+      status: ErrorStatus
+      fieldCountVariable: InspectionCounter
+      name: Cell 0 1
+  - action:
+      actionType: Math
+      operator: IncrementAsNumber
+      variable: InspectionCount
+      clearStartIndex: 1
+      clearLength: 1
       name: Cell 0 2

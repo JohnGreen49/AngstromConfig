@@ -1,1 +1,108 @@
-screens: []
+screens:
+- name: StatusMontior
+  backgroundColor: Grey
+  buttons: []
+  labels:
+  - name: Label3
+    description: Assembly Count
+    xposition: 19
+    yposition: 80
+    width: 173
+    height: 40
+    fGColor: Black
+    bGColor: Grey
+    font: Arial, 14pt, style=Bold
+    source: Assembly Count
+    sourceType: Constant
+    textAlign: Right
+    verticalAlign: Top
+  - name: Label4
+    description: Balance Count
+    xposition: 19
+    yposition: 140
+    width: 173
+    height: 34
+    fGColor: Black
+    bGColor: Grey
+    font: Arial, 14pt, style=Bold
+    source: Balance Count
+    sourceType: Constant
+    textAlign: Right
+    verticalAlign: Top
+  - name: Label6
+    description: Inspection Count
+    xposition: 19
+    yposition: 200
+    width: 173
+    height: 34
+    fGColor: Black
+    bGColor: Grey
+    font: Arial, 14pt, style=Bold
+    source: Inspection Count
+    sourceType: Constant
+    textAlign: Right
+    verticalAlign: Top
+  inputs: []
+  images: []
+  listboxes: []
+  dropdowns: []
+  webPages: []
+  outputTexts:
+  - name: OutputText1
+    description: ${ErrorStatus}
+    xposition: 10
+    yposition: 20
+    width: 704
+    height: 38
+    fGColor: Red
+    bGColor: Silver
+    font: Arial, 12pt, style=Bold, Italic
+    variable: ErrorStatus
+    textAlign: Left
+    verticalAlign: Top
+  - name: OutputText2
+    description: ${AssemblyCount}
+    xposition: 200
+    yposition: 80
+    width: 189
+    height: 20
+    fGColor: Black
+    bGColor: White
+    font: Arial, 14pt, style=Bold
+    variable: AssemblyCount
+    textAlign: Left
+    verticalAlign: Top
+  - name: OutputText5
+    description: ${InspectionCount}
+    xposition: 200
+    yposition: 200
+    width: 189
+    height: 20
+    fGColor: Black
+    bGColor: White
+    font: Arial, 14pt, style=Bold
+    variable: InspectionCount
+    textAlign: Left
+    verticalAlign: Top
+  - name: OutputText5_1
+    description: ${BalanceCount}
+    xposition: 200
+    yposition: 140
+    width: 189
+    height: 20
+    fGColor: Black
+    bGColor: White
+    font: Arial, 14pt, style=Bold
+    variable: BalanceCount
+    textAlign: Left
+    verticalAlign: Top
+  gradientButtons: []
+  userLogins: []
+  zOrder:
+  - OutputText1
+  - OutputText2
+  - Label3
+  - Label4
+  - OutputText5
+  - Label6
+  - OutputText5_1
