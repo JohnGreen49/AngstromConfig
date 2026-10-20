@@ -5,7 +5,7 @@ screens:
   - name: PrintLabel
     description: Print Test Label
     xposition: 40
-    yposition: 250
+    yposition: 340
     width: 5020
     height: 35
     fGColor: Black
@@ -52,7 +52,17 @@ screens:
     sourceType: Constant
     textAlign: Right
     verticalAlign: Top
-  inputs: []
+  inputs:
+  - name: TxtBox_PartId
+    xposition: 40
+    yposition: 270
+    width: 5000
+    height: 33
+    fGColor: Black
+    bGColor: White
+    font: Arial, 14pt, style=Bold
+    variable: PartId
+    multiline: true
   images: []
   listboxes: []
   dropdowns: []
@@ -106,6 +116,18 @@ screens:
     variable: BalanceCount
     textAlign: Left
     verticalAlign: Top
+  - name: OutputText2_1
+    description: ${PartId}
+    xposition: 320
+    yposition: 270
+    width: 226
+    height: 29
+    fGColor: Black
+    bGColor: Grey
+    font: Arial, 14pt, style=Bold
+    variable: PartId
+    textAlign: Left
+    verticalAlign: Top
   gradientButtons: []
   userLogins: []
   zOrder:
@@ -117,3 +139,5 @@ screens:
   - Label6
   - OutputText5_1
   - PrintLabel
+  - TxtBox_PartId
+  - OutputText2_1

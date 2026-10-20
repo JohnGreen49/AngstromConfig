@@ -86,6 +86,11 @@
   isArray: false
   dataType: Real
   variableType: Local
+- name: PartId
+  isArray: false
+  dataType: String
+  defaultValue: Enter-Part-ID
+  variableType: Local
 - name: PassFail
   isArray: false
   dataType: String
