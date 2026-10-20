@@ -132,6 +132,43 @@
       name: Cell 0 2
 - gridRows: 3
   gridColumns: 10
+  name: PrintLabel_Logic
+  associatedDeviceName: Screen:StatusMontior/PrintLabel
+  triggerMode: OnEvent
+  steps:
+  - action:
+      actionType: ActionReadFromFile
+      resultVariableType: Variable
+      resultVariable: Label1Template
+      fileSpecPathType: Variable
+      fileSpecPath: PW_ConfigFolder
+      fileSpecFilenameType: Value
+      fileSpecFilename: Label1
+      fileSpecFileExtensionType: Value
+      fileSpecFileExtension: txt
+      readMode: EntireFile
+      name: Cell 0 1
+  - action:
+      actionType: FillTemplate
+      templateSourceType: Variable
+      templateVariable: Label1Template
+      outputVariable: Label1TemplateOutput
+      name: Cell 0 1
+  - action:
+      actionType: PrintBarcode
+      printerName: Table1Printer
+      fields:
+      - fieldName: TemplateText
+        fieldType: Text
+        sourceType: Variable
+        source: Label1TemplateOutput
+        textFontName: 0
+        textOrientation: Normal
+        textHeight: 30
+        textWidth: 30
+      name: Cell 0 3
+- gridRows: 3
+  gridColumns: 10
   name: QA_Logic
   associatedDeviceName: FinalQACsv
   triggerMode: OnEvent

@@ -74,6 +74,14 @@
   isArray: false
   dataType: String
   variableType: Local
+- name: Label1Template
+  isArray: false
+  dataType: String
+  variableType: Local
+- name: Label1TemplateOutput
+  isArray: false
+  dataType: String
+  variableType: Local
 - name: MeasurementData
   isArray: false
   dataType: Real

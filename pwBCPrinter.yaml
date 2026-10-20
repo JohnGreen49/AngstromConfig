@@ -3,6 +3,7 @@
   type: Network
   socketIPAddress: 192.168.3.2
 - name: Table1Printer
+  description: Test Printer
   station: PrototypeTable1
   type: Network
-  socketIPAddress: 192.168.3.2
+  socketIPAddress: 192.168.2.77

@@ -1,7 +1,17 @@
 screens:
 - name: StatusMontior
   backgroundColor: Grey
-  buttons: []
+  buttons:
+  - name: PrintLabel
+    description: Print Test Label
+    xposition: 40
+    yposition: 250
+    width: 5020
+    height: 35
+    fGColor: Black
+    bGColor: White
+    font: Arial, 14pt, style=Bold
+    type: SetToValue
   labels:
   - name: Label3
     description: Assembly Count
@@ -106,3 +116,4 @@ screens:
   - OutputText5
   - Label6
   - OutputText5_1
+  - PrintLabel
