@@ -12,7 +12,7 @@
   deviceType: ReadFromFile
   station: Final QA
   disabled: false
-- portID: 3
+- portID: 7
   baudRate: 9600
   dataBits: 8
   parity: n
