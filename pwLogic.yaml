@@ -73,28 +73,6 @@
       name: Cell 0 5
 - gridRows: 3
   gridColumns: 10
-  name: BalanceCam_Logic_1
-  associatedDeviceName: BalanceCam
-  triggerMode: OnEvent
-  steps:
-  - action:
-      actionType: PrintBarcode
-      printerName: Table 2 Printer
-      fields: &o0
-      - fieldName: A
-        fieldType: Text
-        positionX: 10
-        positionY: 100
-        sourceType: Variable
-        source: FormattedTimeStamp
-      name: Cell 0 1
-  - action:
-      actionType: PrintBarcode
-      printerName: Table 2 Printer
-      fields: *o0
-      name: Cell 0 2
-- gridRows: 3
-  gridColumns: 10
   name: Balance_Logic
   associatedDeviceName: BalanceCsv
   triggerMode: OnEvent
@@ -132,6 +110,24 @@
       name: Cell 0 2
 - gridRows: 3
   gridColumns: 10
+  name: LeftScanner_BootLogic
+  associatedDeviceName: LeftScanner
+  triggerMode: OnStart
+  steps:
+  - action:
+      actionType: ActionReadFromFile
+      resultVariableType: Variable
+      resultVariable: LeftSerialNumber
+      fileSpecPathType: Value
+      fileSpecPath: C:\ProgramData\HTE\Plantwatch\
+      fileSpecFilenameType: Value
+      fileSpecFilename: LAST_SERIALNO
+      fileSpecFileExtensionType: Value
+      fileSpecFileExtension: txt
+      readMode: SingleLine
+      name: Cell 0 2
+- gridRows: 3
+  gridColumns: 10
   name: PrintLabel_Logic
   associatedDeviceName: Screen:StatusMontior/PrintLabel
   triggerMode: OnEvent
@@ -143,9 +139,9 @@
       fileSpecPathType: Variable
       fileSpecPath: PW_ConfigFolder
       fileSpecFilenameType: Value
-      fileSpecFilename: Label1
+      fileSpecFilename: OrigionalSupplierLabel
       fileSpecFileExtensionType: Value
-      fileSpecFileExtension: txt
+      fileSpecFileExtension: zpl
       readMode: EntireFile
       name: Cell 0 1
   - action:
@@ -153,19 +149,16 @@
       templateSourceType: Variable
       templateVariable: Label1Template
       outputVariable: Label1TemplateOutput
-      name: Cell 0 1
+      name: Cell 0 2
   - action:
-      actionType: PrintBarcode
-      printerName: Table1Printer
-      fields:
-      - fieldName: TemplateText
-        fieldType: Text
-        sourceType: Variable
-        source: Label1TemplateOutput
-        textFontName: 0
-        textOrientation: Normal
-        textHeight: 30
-        textWidth: 30
+      actionType: ActionWriteToDevice
+      prefixType: Value
+      sourceType: Variable
+      source: Label1TemplateOutput
+      suffixType: Value
+      addCrLf: Yes
+      device: ZebraPrinter
+      status: ErrorStatus
       name: Cell 0 3
 - gridRows: 3
   gridColumns: 10
