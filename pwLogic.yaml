@@ -110,19 +110,28 @@
       name: Cell 0 2
 - gridRows: 3
   gridColumns: 10
+  name: LeftScanner_BootLogic
+  associatedDeviceName: LeftScanner
+  triggerMode: OnStart
+  steps:
+  - action:
+      actionType: ActionReadFromFile
+      resultVariableType: Variable
+      resultVariable: LeftSerialNumber
+      fileSpecPathType: Value
+      fileSpecPath: C:\ProgramData\HTE\Plantwatch\
+      fileSpecFilenameType: Value
+      fileSpecFilename: LAST_SERIALNO
+      fileSpecFileExtensionType: Value
+      fileSpecFileExtension: txt
+      readMode: SingleLine
+      name: Cell 0 2
+- gridRows: 3
+  gridColumns: 10
   name: PrintLabel_Logic
   associatedDeviceName: Screen:StatusMontior/PrintLabel
   triggerMode: OnEvent
   steps:
-  - action:
-      actionType: Math
-      sourceType: Variable
-      source: _RandInt
-      operator: SetVariableToValue
-      variable: PartId
-      clearStartIndex: 1
-      clearLength: 1
-      name: Cell 0 1
   - action:
       actionType: ActionReadFromFile
       resultVariableType: Variable

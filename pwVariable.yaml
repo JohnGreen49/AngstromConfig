@@ -58,6 +58,11 @@
   isArray: false
   dataType: String
   variableType: Local
+- name: IDFileExists
+  isArray: false
+  dataType: Integer
+  defaultValue: 0
+  variableType: Local
 - name: InspectionCount
   isArray: false
   dataType: Integer
@@ -81,6 +86,10 @@
 - name: Label1TemplateOutput
   isArray: false
   dataType: String
+  variableType: Local
+- name: LeftSerialNumber
+  isArray: false
+  dataType: Integer
   variableType: Local
 - name: MeasurementData
   isArray: false
