@@ -52,6 +52,19 @@ screens:
     sourceType: Constant
     textAlign: Right
     verticalAlign: Top
+  - name: Label2
+    description: LEFT
+    xposition: 490
+    yposition: 140
+    width: 60
+    height: 20
+    fGColor: Black
+    bGColor: White
+    font: Arial, 14pt, style=Bold
+    source: LEFT
+    sourceType: Constant
+    textAlign: Left
+    verticalAlign: Top
   inputs:
   - name: TxtBox_PartId
     xposition: 40
@@ -128,6 +141,30 @@ screens:
     variable: PartId
     textAlign: Left
     verticalAlign: Top
+  - name: OutputText1_1
+    description: ${LeftLabelCounter}
+    xposition: 481
+    yposition: 170
+    width: 219
+    height: 20
+    fGColor: Black
+    bGColor: Grey
+    font: Arial, 14pt, style=Bold
+    variable: LeftLabelCounter
+    textAlign: Left
+    verticalAlign: Top
+  - name: OutputText3
+    description: ${LeftMessage}
+    xposition: 480
+    yposition: 200
+    width: 201
+    height: 20
+    fGColor: Black
+    bGColor: Grey
+    font: Arial, 14pt, style=Bold
+    variable: LeftMessage
+    textAlign: Left
+    verticalAlign: Top
   gradientButtons: []
   userLogins: []
   zOrder:
@@ -141,3 +178,6 @@ screens:
   - PrintLabel
   - TxtBox_PartId
   - OutputText2_1
+  - OutputText1_1
+  - Label2
+  - OutputText3

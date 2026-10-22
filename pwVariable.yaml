@@ -87,6 +87,16 @@
   isArray: false
   dataType: String
   variableType: Local
+- name: LeftLabelCounter
+  isArray: false
+  dataType: Integer
+  defaultValue: 0
+  persistenceGroup: LEFT
+  variableType: Local
+- name: LeftMessage
+  isArray: false
+  dataType: String
+  variableType: Local
 - name: LeftSerialNumber
   isArray: false
   dataType: Integer

@@ -124,7 +124,7 @@
       fileSpecFilename: OrigionalSupplierLabel
       fileSpecFileExtensionType: Value
       fileSpecFileExtension: zpl
-      readMode: SingleLine
+      readMode: EntireFile
 - gridRows: 3
   gridColumns: 10
   name: PrintLabelLogic
@@ -150,7 +150,7 @@
       fileSpecFileExtensionType: Value
       fileSpecFileExtension: zpl
       readMode: EntireFile
-      name: Cell 0 1
+      name: Cell 0 2
   - action:
       actionType: FillTemplate
       templateSourceType: Variable
@@ -167,6 +167,48 @@
       device: ZebraPrinter
       status: ErrorStatus
       name: Cell 0 3
+  - action:
+      actionType: Math
+      operator: IncrementAsNumber
+      variable: LeftLabelCounter
+      clearStartIndex: 1
+      clearLength: 1
+      name: Cell 0 5
+  - action:
+      actionType: PersistVars
+      mode: Save
+      group: LEFT
+      status: ErrorStatus
+      name: Cell 0 6
+  - action:
+      actionType: If
+      sourceType: Variable
+      source: InspectionCounter
+      compareOperator: =
+      containsStartPositionVariable: AssemblyCount
+      containsInstanceCountVariable: AssemblyCount
+      comparedToType: Value
+      comparedTo: 18
+      name: Cell 0 7
+    falseBranch:
+    - action:
+        actionType: Math
+        sourceType: Value
+        source: 0
+        operator: SetVariableToValue
+        variable: LeftLabelCounter
+        clearStartIndex: 1
+        clearLength: 1
+        name: Cell 1 7
+    - action:
+        actionType: Math
+        sourceType: Value
+        source: TIME TO WRITE OTHER LABEL
+        operator: SetVariableToValue
+        variable: LeftMessage
+        clearStartIndex: 1
+        clearLength: 1
+        name: Cell 1 8
 - gridRows: 3
   gridColumns: 10
   name: PrintLabel_Logic
